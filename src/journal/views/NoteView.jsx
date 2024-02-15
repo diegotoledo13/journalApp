@@ -38,7 +38,7 @@ export const NoteView = () => {
           fullWidth
           multiline
           placeholder="Que sucedió en el dia de hoy?"
-          minRows={4}
+          minRows={5}
         />
       </Grid>
       <ImageGallery />
