@@ -45,3 +45,9 @@ export const startLoginWithEmailPassword = ({ email, password }) => {
     dispatch(login(result));
   };
 };
+export const startLogout = () => {
+  return async (dispatch) => {
+    dispatch(checkingCredentials());
+    dispatch(logout({}));
+  };
+};
