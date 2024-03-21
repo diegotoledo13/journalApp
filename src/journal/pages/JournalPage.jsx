@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { IconButton } from "@mui/material";
 import { JournalLayout } from "../layout/JournalLayout";
 import { NoteView } from "../views";
@@ -8,6 +8,7 @@ import { startNewNote } from "../../store/journal";
 
 export const JournalPage = () => {
   const dispatch = useDispatch();
+  const { isSaving } = useSelector((state) => state.journal);
   const onClickNewNotes = () => {
     dispatch(startNewNote());
   };
@@ -16,6 +17,7 @@ export const JournalPage = () => {
       <NothingSelectedView />
       {/*<NoteView />*/}
       <IconButton
+        disabled={isSaving}
         onClick={onClickNewNotes}
         size="large"
         sx={{
